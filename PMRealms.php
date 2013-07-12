@@ -2,9 +2,9 @@
 
 /*
 __PocketMine Plugin__
-name=PocketMine Realms
+name=PocketMine Realms yasin
 description=Automatic server listing on PocketMine Realms and more features.
-version=0.1
+version=0.7.2
 author=shoghicp
 class=PMRealms
 apiversion=9
@@ -20,17 +20,17 @@ class PMRealms implements Plugin{
 	public function init(){
 		$this->config = new Config($this->api->plugin->configPath($this)."config.yml", CONFIG_YAML, array(
 			"ownerName" => "",
-			"externalAddress" => "",
-			"externalPort" => "",
+			"externalAddress" => "",192.168.1.2
+			"externalPort" => "",10
 		));
 		
 		$error = 0;
 		if($this->config->get("ownerName") == ""){
-			console("[ERROR] [Realms] Please set your ownerName to your Realms name.");
+			console("[ERROR] [Realms] Please set your ownerName to your Realms name."); yasin
 			++$error;
 		}
 		if($this->config->get("externalAddress") == ""){
-			console("[ERROR] [Realms] Please set your externalIP.");
+			console("[ERROR] [Realms] Please set your externalIP."); 192.168.1.2
 			++$error;
 		}
 		if($this->config->get("externalPort") == ""){
@@ -62,7 +62,7 @@ class PMRealms implements Plugin{
 				"ip" => $this->config->get("externalAddress"),
 				"port" => (int) $this->config->get("externalPort"),
 				"ownerName" => $this->config->get("ownerName"),
-				"name" => $this->server->name,
+				"name" => $this->server->name, yasin
 				"maxNrPlayers" => $this->server->maxClients,
 				"nrPlayers" => count($this->api->player->getAll()),
 				"type" => ($this->server->api->getProperty("gamemode") & 0x01) === 1 ? "creative":"survival",
