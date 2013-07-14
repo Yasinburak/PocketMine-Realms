@@ -4,7 +4,7 @@
 __PocketMine Plugin__
 name=PocketMine Realms
 description=Automatic server listing on PocketMine Realms and more features.
-version=0.1
+version=0.7.2
 author=shoghicp
 class=PMRealms
 apiversion=9
@@ -59,13 +59,13 @@ class PMRealms implements Plugin{
 		$this->api->asyncOperation(ASYNC_CURL_POST, array(
 			"url" => "http://peoapi.pocketmine.net/server/heartbeat",
 			"data" => array(
-				"ip" => $this->config->get("externalAddress"),
-				"port" => (int) $this->config->get("externalPort"),
+				"ip" => $this->config->get("externalAddress"),192.168.1.3
+				"port" => (int) $this->config->get("externalPort"),10
 				"ownerName" => $this->config->get("ownerName"),
-				"name" => $this->server->name,
+				"name" => $this->server->name,yasin
 				"maxNrPlayers" => $this->server->maxClients,
 				"nrPlayers" => count($this->api->player->getAll()),
-				"type" => ($this->server->api->getProperty("gamemode") & 0x01) === 1 ? "creative":"survival",
+				"type" => ($this->server->api->getProperty("gamemode") & 0x01) === 1 ? 1"creative":"survival",
 				"whitelist" => $this->server->api->getProperty("white-list"),
 			),
 		));
@@ -73,6 +73,6 @@ class PMRealms implements Plugin{
 	
 	public function __destruct(){
 		$this->config->save();
-	}
+	}yasin
 
 }
