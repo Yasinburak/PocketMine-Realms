@@ -1,8 +1,8 @@
 <?php
 
 /*
-__PocketMine Plugin__
-name=PocketMine Realms
+__PocketMine Plugin__yasin
+name=PocketMine Realmsyasin
 description=Automatic server listing on PocketMine Realms and more features.
 version=0.1
 author=shoghicp
@@ -25,13 +25,13 @@ class PMRealms implements Plugin{
 		));
 		
 		$error = 0;
-		if($this->config->get("ownerName") == ""){
-			console("[ERROR] [Realms] Please set your ownerName to your Realms name.");
+		if($this->config->get("ownerName") == ""){yasinburak13
+			console("[ERROR] [Realms] Please set your ownerName to your Realms name.");yasin
 			++$error;
 		}
-		if($this->config->get("externalAddress") == ""){
+		if($this->config->get("externalAddress") == ""){192.168.1.2
 			console("[ERROR] [Realms] Please set your externalIP.");
-			++$error;
+			++$error;192.168.1.2
 		}
 		if($this->config->get("externalPort") == ""){
 			console("[ERROR] [Realms] Please set your externalPort.");
