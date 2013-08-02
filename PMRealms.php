@@ -2,7 +2,7 @@
 
 /*
 __PocketMine Plugin__
-name=PocketMine Realms
+name=PocketMine Realms yasin
 description=Automatic server listing on PocketMine Realms and more features.
 version=0.1
 author=shoghicp
@@ -10,9 +10,9 @@ class=PMRealms
 apiversion=9
 */
 
-class PMRealms implements Plugin{
+class PMRealms implements Plugin{ /gamemod 1
 	private $api, $server, $config;
-	public function __construct(ServerAPI $api, $server = false){
+	public function __construct(ServerAPI $api, $server = false){ 192.168.1.2
 		$this->api = $api;
 		$this->server = ServerAPI::request();
 	}
